@@ -1,18 +1,21 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">BAHRI HR</a>
+            <a href="{{ url('home') }}">Ilham HR</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="{{ url('home') }}">St</a>
         </div>
         <ul class="sidebar-menu">
 
-            <ul class="sidebar-menu">
+            {{-- <ul class="sidebar-menu">
+               <li class="nav-item dropdown">
+                   <a href="#" class="nav-link has-dropdown"><i class="fas fa-user"></i><span>User Manajement</span></a>
+                   <ul class="dropdown-menu">
                 <li class='{{ Request::is('dashboard') ? 'active' : '' }}'>
                            <a class="nav-link" href="{{ url('home') }}">General Dashboard</a>
                        </li>
-           </ul>
+           </ul> --}}
            <ul class="sidebar-menu">
                <li class="nav-item dropdown">
                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-user"></i><span>User Manajement</span></a>
