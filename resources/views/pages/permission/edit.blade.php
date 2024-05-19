@@ -85,8 +85,10 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="card-footer text-right">
-                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                    <button type="button" class="btn btn-secondary" onclick="window.location.href='{{ url()->previous() }}'">Cancel</button>
+                                    <button class="btn btn-primary">Simpan Perubahan</button>
                                 </div>
                             </form>
                         </div>

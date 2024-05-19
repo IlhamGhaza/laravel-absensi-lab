@@ -39,11 +39,13 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'gender' => $request->gender,
             'phone' => $request->phone,
             'role' => $request->role,
             'password' => Hash::make($request->password),
             'position' => $request->position,
             'department' => $request->department,
+
         ]);
 
         return redirect()->route('users.index')->with('success', 'User created successfully');
@@ -66,10 +68,12 @@ class UserController extends Controller
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
+            'gender' => $request->gender,
             'phone' => $request->phone,
             'role' => $request->role,
             'position' => $request->position,
             'department' => $request->department,
+
         ]);
 
         //if password filled
@@ -88,5 +92,5 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index')->with('success', 'User deleted successfully');
     }
-    
+
 }

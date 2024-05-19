@@ -82,6 +82,25 @@
                                     </div>
                                 @enderror
                             </div>
+
+                            {{-- gender form --}}
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <div class="selectgroup w-100">
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="gender" value="male" class="selectgroup-input"
+                                            @if ($user->role == 'male') checked @endif>
+                                        <span class="selectgroup-button">Male</span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="role" value="female" class="selectgroup-input"
+                                            @if ($user->role == 'female') checked @endif>
+                                        <span class="selectgroup-button">Female</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input type="number" class="form-control" name="phone">

@@ -50,6 +50,7 @@
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label>Email</label>
                                 <input type="email"
@@ -63,6 +64,7 @@
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label>Password</label>
                                 <div class="input-group">
@@ -83,6 +85,24 @@
                                     </div>
                                 @enderror
                             </div>
+
+                            {{-- gender form --}}
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <div class="selectgroup w-100">
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="gender" value="male" class="selectgroup-input"
+                                            @if ($user->gender == 'male') checked @endif>
+                                        <span class="selectgroup-button">Male</span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="role" value="female" class="selectgroup-input"
+                                            @if ($user->gender == 'female') checked @endif>
+                                        <span class="selectgroup-button">Female</span>
+                                    </label>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input type="number" class="form-control" name="phone" value="{{ $user->phone }}">
@@ -100,6 +120,7 @@
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label>Department</label>
                                 <input type="text"
@@ -113,6 +134,7 @@
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label class="form-label">Roles</label>
                                 <div class="selectgroup w-100">
@@ -135,9 +157,13 @@
                                 </div>
                             </div>
                         </div>
+
+
                         <div class="card-footer text-right">
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='{{ url()->previous() }}'">Cancel</button>
                             <button class="btn btn-primary">Submit</button>
                         </div>
+
                     </form>
                 </div>
 
