@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Attendances')
+@section('title', 'Permissions')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -11,25 +11,25 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Attendances</h1>
+                <h1>Profile Perusahaan</h1>
                 {{-- <div class="section-header-button">
-                    <a href="{{ route('attendances.create') }}" class="btn btn-primary">Add New</a>
+                    <a href="{{ route('permissions.create') }}" class="btn btn-primary">Add New</a>
                 </div> --}}
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Attendances</a></div>
-                    <div class="breadcrumb-item">All Attendances</div>
+                    <div class="breadcrumb-item"><a href="#">Profile Perusahaan</a></div>
+                    <div class="breadcrumb-item">All Profile Perusahaan</div>
                 </div>
             </div>
             <div class="section-body">
                 <div class="row">
-                    {{-- <div class="col-12">
+                    <div class="col-12">
                         @include('layouts.alert')
-                    </div> --}}
+                    </div>
                 </div>
-                <h2 class="section-title">Attendances</h2>
+                <h2 class="section-title">Permissions</h2>
                 <p class="section-lead">
-                    You can manage all Attendances, such as editing, deleting and more.
+                    You can manage all Profile Perusahaan, such as editing, deleting and more.
                 </p>
 
 
@@ -37,14 +37,14 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Posts</h4>
+                                <h4>All Profile Perusahaan</h4>
                             </div>
                             <div class="card-body">
 
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('attendances.index') }}">
+                                    <form method="GET" action="{{ route('company.index') }}">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search by patient name" name="name">
+                                            <input type="text" class="form-control" placeholder="Search by name" name="name">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                             </div>
@@ -58,45 +58,38 @@
                                     <table class="table-striped table">
                                         <tr>
 
-                                            <th>Name</th>
-                                            <th>Date</th>
-                                            <th>Time In</th>
-                                            <th>Time Out</th>
-                                            <th>Latlong In</th>
-                                            <th>Latlong Out</th>
+                                            <th>Nama Perusahaan</th>
+                                            <th>Alamat Perusahaan</th>
+                                            <th>Email Perusahaan</th>
+                                            <th>Radius KM</th>
+                                            <th>Latitude</th>
+                                            <th>Longitude</th>
+                                            <th>Waktu Masuk</th>
+                                            <th>Waktu Pulang</th>
 
-                                            {{-- <th>Action</th> --}}
+                                            <th>Action</th>
                                         </tr>
-                                        @foreach ($attendances as $attendance)
+                                        @foreach ($companies as $company)
                                             <tr>
 
-                                                <td>{{ $attendance->user->name }}
-                                                </td>
-                                                <td>
-                                                    {{ $attendance->date }}
-                                                </td>
-                                                <td>
-                                                    {{ $attendance->time_in }}
-                                                </td>
-                                                <td>
-                                                    {{ $attendance->time_out }}
-                                                </td>
-                                                <td>
-                                                    {{ $attendance->latlon_in }}
-                                                </td>
-                                                <td>
-                                                    {{ $attendance->latlon_out }}
-                                                </td>
+                                                <td>{{ $company->name }}</td>
+                                                <td>{{ $company->address }}</td>
+                                                <td>{{ $company->email }}</td>
+                                                <td>{{ $company->radius_km }} KM</td>
+                                                <td>{{ $company->latitude }}</td>
+                                                <td>{{ $company->longitude }}</td>
+                                                <td>{{ $company->time_in }}</td>
+                                                <td>{{ $company->time_out }}</td>
 
-                                                {{-- <td>
+                                                <td>
                                                     <div class="d-flex justify-content-center">
-                                                        <a href='{{ route('attendances.edit', $attendance->id) }}'
+                                                        <a href='{{ route('companies.show', $company->id) }}'
                                                             class="btn btn-sm btn-info btn-icon">
                                                             <i class="fas fa-edit"></i>
-                                                            Edit
+                                                            Detail
                                                         </a>
 
-                                                        <form action="{{ route('attendances.destroy', $attendance->id) }}"
+                                                        <form action="{{ route('companies.destroy', $company->id) }}"
                                                             method="POST" class="ml-2">
                                                             <input type="hidden" name="_method" value="DELETE" />
                                                             <input type="hidden" name="_token"
@@ -106,7 +99,7 @@
                                                             </button>
                                                         </form>
                                                     </div>
-                                                </td> --}}
+                                                </td>
                                             </tr>
                                         @endforeach
 
@@ -114,7 +107,7 @@
                                     </table>
                                 </div>
                                 <div class="float-right">
-                                    {{ $attendances->withQueryString()->links() }}
+                                    {{ $companies->links() }}
                                 </div>
                             </div>
                         </div>

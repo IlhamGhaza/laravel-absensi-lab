@@ -31,8 +31,8 @@ class DatabaseSeeder extends Seeder
 
         // data dummy for company
         \App\Models\Company::create([
-            'name' => 'Labsi',
-            'email' => 'labsi@gunadarma.ac.id',
+            'name' => 'Gunadarma E',
+            'email' => 'care@gunadarma.ac.id',
             'address' => 'Jl. Komjen.Pol.M.Jasin No.9, Tugu, Kec. Cimanggis, Kota Depok, Jawa Barat 16451',
             'latitude' => '-6.354254535619977',
             'longitude' => '106.84146168658167',
@@ -40,6 +40,26 @@ class DatabaseSeeder extends Seeder
             'time_in' => '08:00',
             'time_out' => '17:00',
         ]);
+        // \App\Models\Company::create([
+        //     'name' => 'Gunadarma D',
+        //     'email' => 'care@gunadarma.ac.id',
+        //     'address' => 'Jl. Komjen.Pol.M.Jasin No.9, Tugu, Kec. Cimanggis, Kota Depok, Jawa Barat 16451',
+        //     'latitude' => '-6.354254535619977',
+        //     'longitude' => '106.84146168658167',
+        //     'radius_km' => '0.5',
+        //     'time_in' => '08:00',
+        //     'time_out' => '17:00',
+        // ]);
+        // \App\Models\Company::create([
+        //     'name' => 'Gunadarma H',
+        //     'email' => 'care@gunadarma.ac.id',
+        //     'address' => 'Jl. Komjen.Pol.M.Jasin No.9, Tugu, Kec. Cimanggis, Kota Depok, Jawa Barat 16451',
+        //     'latitude' => '-6.354254535619977',
+        //     'longitude' => '106.84146168658167',
+        //     'radius_km' => '0.5',
+        //     'time_in' => '08:00',
+        //     'time_out' => '17:00',
+        // ]);
 
         $this->call([
             AttendanceSeeder::class,
